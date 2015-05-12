@@ -56,6 +56,7 @@ function vr_calendar_shortcode( $attr ) {
  				
 		availabilityCalendar.rootNodeId = 'calendar';
 		availabilityCalendar.popupNodeId = 'availabilityPopup';
+		availabilityCalendar.ownerView = $admin_view;
 
 		var icalUrl = '$plugin_path/php/icalfwd.php';
 		var icalLoader = new net.ContentLoader(icalUrl, avCaliCalLoaded, avCaliCalError,'POST','url=' + '$ical_url');
