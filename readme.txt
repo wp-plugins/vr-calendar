@@ -57,3 +57,6 @@ click edit, and choose one of the css pages. Some knowledge of css syntax is req
 = 1.1.0 =
 * Added ical url override option and owners view
 
+= 1.1.1 =
+* Fixed owners view enable
+
