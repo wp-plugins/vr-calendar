@@ -7,7 +7,6 @@ add_shortcode( 'vrcalendar', 'vr_calendar_shortcode' );
 // The callback function that will replace [books]
 function vr_calendar_shortcode( $attr ) {
 
-	//$ical_url = "http://admin.vrbo.com/icalendar/b79627776a1e4d5e976fa214e21d0a3b.ics";
 	$options = get_option( 'vr_calendar_options' );
 	$ical_url = $options['ical_url'];
 	
@@ -25,6 +24,19 @@ function vr_calendar_shortcode( $attr ) {
         	$cal_style = file_get_contents( plugin_dir_path( __FILE__ ) . '../css/availabilityCalendarLarge.css');
             break;
     }
+
+	// URL override?
+    if( isset( $attr['ical_url'] ) ) {
+ 		$ical_url = $attr['ical_url'];
+ 	}
+ 	
+ 	// admin view?
+ 	if( current_user_can( 'edit_pages' ) ) {
+		$admin_view = 'true';
+	}
+	else {
+		$admin_view = 'false';
+	}
 	
     return "
     	<style> $cal_style </style>

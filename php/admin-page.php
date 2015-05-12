@@ -56,7 +56,9 @@ function vr_calendar_admin_init(){
 function vr_calendar_section_text() {
 	echo '<p>Your availability calendar will display on any page or post where you include the <b>[vrcalendar]</b> shortcode. You can specify a size
 	like <b>[vrcalendar size=large]</b> where size can be small, medium, or large.</p><p>Your calendar is driven from a master calendar iCal feed that
-	you enter below. This can be from any calendar that supports iCal like HomeAway, VRBO, FlipKey, AirBnB, Google, Apple, Microsoft, Yahoo and others.</p>';
+	you enter below. This can be from any calendar that supports iCal like HomeAway, VRBO, FlipKey, AirBnB, Google, Apple, Microsoft, Yahoo and others.
+	You can override this default URL on any page or post by adding the shortcode option ical_url like <b>[vrcalendar ical_url="http://activevacationrentals.com/tracker/ical/ical3.php"]
+	</b></p>';
 }
 
 // Display and fill the form field
