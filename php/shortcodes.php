@@ -61,6 +61,31 @@ function vr_calendar_shortcode( $attr ) {
 		var icalUrl = '$plugin_path/php/icalfwd.php';
 		var icalLoader = new net.ContentLoader(icalUrl, avCaliCalLoaded, avCaliCalError,'POST','url=' + '$ical_url');
 
-		</script>		
-  	";
+		</script>
+		
+		<form name='availabilityPopup'
+		      id='availabilityPopup'
+		      class=popup
+		      style='display:none'
+		      enctype='multipart/form-data'
+		>
+		<table border=0>
+		 <tr>
+		  <td>Name</td>
+		  <td> <input type='text' readonly name='summary' size=30  > </td>
+		 </tr>
+		 <tr>
+		  <td>Arrive</td>
+		  <td> <input type='text' readonly name='arrive' size=30  > </td>
+		 </tr>
+		 <tr>
+		  <td>Depart</td>
+		  <td> <input type='text' readonly name='depart' size=30  > </td>
+		 </tr>
+		 <tr>
+		  <td> <input class=button type='button' value='Ok' onClick='document.availabilityPopup.style.display=\"none\";'>
+		 </tr>
+		</table>
+		</form>	
+	  	";
 }
