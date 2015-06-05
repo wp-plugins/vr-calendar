@@ -9,6 +9,15 @@ function vr_calendar_shortcode( $attr ) {
 
 	$options = get_option( 'vr_calendar_options' );
 	$ical_url = $options['ical_url'];
+	$show_end_day = 'false';
+	if( isset( $options['end_day_available'] ) )
+	{
+		if( ! $options['end_day_available'] )
+		{
+			$show_end_day = 'true';
+		}
+	}
+	
 	
 	$plugin_path = plugins_url() . '/vr-calendar';
 	
@@ -57,6 +66,7 @@ function vr_calendar_shortcode( $attr ) {
 		availabilityCalendar.rootNodeId = 'calendar';
 		availabilityCalendar.popupNodeId = 'availabilityPopup';
 		availabilityCalendar.ownerView = $admin_view;
+		availabilityCalendar.showEndDay = $show_end_day;
 
 		var icalUrl = '$plugin_path/php/icalfwd.php';
 		var icalLoader = new net.ContentLoader(icalUrl, avCaliCalLoaded, avCaliCalError,'POST','url=' + '$ical_url');

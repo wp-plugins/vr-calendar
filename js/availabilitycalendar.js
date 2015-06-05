@@ -3,6 +3,7 @@
 var availabilityCalendar = {
 
 	ownerView: false,
+	showEndDay: false,
 	rootNodeId: "calendar",
 	popupNodeId: "availabilityPopup",
 	events:[],
@@ -264,8 +265,12 @@ function avCaliCalLoaded()
 			// ignore events older than the first of this month to speed up drawing
 			if( icalParser.ical.events[i].dtend > firstOfMonth )
 			{
-				// subtract off the last day (we don't count end night as unavailable)
-				icalParser.ical.events[i].dtend.setTime( icalParser.ical.events[i].dtend.valueOf() - (1000 * 60 * 60 * 24) ); 
+				if( !availabilityCalendar.showEndDay )
+				{
+					// subtract off the last day (we don't count end night as unavailable)
+					icalParser.ical.events[i].dtend.setTime( icalParser.ical.events[i].dtend.valueOf() - (1000 * 60 * 60 * 24) ); 
+				}
+				
 			 	availabilityCalendar.events[availabilityCalendar.events.length] = icalParser.ical.events[i];
 			}
 		}

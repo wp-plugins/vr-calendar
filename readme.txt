@@ -37,6 +37,9 @@ TENTATIVE or HOLD will not be shown as unavailable.
 After following the installation instructions, find the "VR Calendar" menu item on the left-hand Settings menu.  Enter the URL of your master calendar iCal feed. Display your calendar
 using the [vrcalendar] shortcode.
 
+Some calendar iCal feeds send the end date as the depart day, others send the end date as the last unavailable night. For those that send the end date as the depart day,
+clicking the "Show end day as available" box will strip off the last day so that it shows as an available night.
+
 The iCal URL setting can be overridden on a page or
 post by using the shortcode option ical_url like [vrcalendar ical_url="http://activevacationrentals.com/tracker/ical/ical3.php"]. This is useful if you have multiple properties on a
 single WordPress site. 
@@ -59,4 +62,8 @@ click edit, and choose one of the css pages. Some knowledge of css syntax is req
 
 = 1.1.1 =
 * Fixed owners view enable
+
+= 1.2.0 =
+* Added settings option to show end date as available. This was required to cope with changes made by 
+HomeAway/VRBO where their iCal feed changed from arrive and depart days to unavailable nights.
 
