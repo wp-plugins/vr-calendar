@@ -4,7 +4,7 @@ Donate link: http://strongenging.com/vrwt/wordpress.php
 Tags: calendar, vacation rental, ical
 Requires at least: 3.0.1
 Tested up to: 4.1
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,4 +66,7 @@ click edit, and choose one of the css pages. Some knowledge of css syntax is req
 = 1.2.0 =
 * Added settings option to show end date as available. This was required to cope with changes made by 
 HomeAway/VRBO where their iCal feed changed from arrive and depart days to unavailable nights.
+
+= 1.2.1 =
+* Fixed ical feeds from AirBnb since they started to redirect iCal URLs.
 
